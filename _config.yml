@@ -1,5 +1,0 @@
-name: jmaghak
-markdown: minima
-permalink: /blog/:year/:month/:day/:title
-gems:
-  - jekyll-sitemap
