@@ -1,5 +1,6 @@
 ---
 layout: basic
+title: "Search"
 ---
 
 <div id="main">
@@ -13,7 +14,7 @@ layout: basic
         {{#entries}}
         <article>
             <h3>
-        {{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
+        {{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}} &middot;
         <a href="{{url}}">{{title}}</a>
       </h3> {{#is_post}}
       <ul>
