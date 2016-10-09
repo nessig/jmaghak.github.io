@@ -2,4 +2,27 @@
 layout: basic
 ---
 
-blahh
+<div id="main">
+    <form action="/search" method="get">
+        <input type="text" id="search-query" name="q" placeholder="Search" autocomplete="off">
+    </form>
+
+    <section id="search-results" style="display: none;"> </section>
+    {% raw %}
+    <script id="search-results-template" type="text/mustache">
+        {{#entries}}
+        <article>
+            <h3>
+        {{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
+        <a href="{{url}}">{{title}}</a>
+      </h3> {{#is_post}}
+      <ul>
+          {{#categories}}<div class="category">{{.}}</div> {{/categories}}
+            </ul>
+            {{/is_post}}
+        </article>
+        {{/entries}}
+    </script>
+    {% endraw %}
+
+</div>
