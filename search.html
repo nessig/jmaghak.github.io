@@ -2,9 +2,13 @@
 layout: basic
 title: "Search"
 ---
-
+{% if jekyll.environment == "development" %}
+{% assign base = site.baseurl %}
+{% else %}
+{% assign base = site.github.url %}
+{% endif %}
 <div id="main">
-<form action="{{ site.github.url }}/search" method="get">
+<form action="{{ base }}/search" method="get">
   <label for="search-box">Search</label>
   <input type="text" id="search-box" name="query">
   <input type="submit" value="search">
@@ -35,5 +39,5 @@ title: "Search"
       {% endfor %}
   };
 </script>
-<script src="{{ site.github.url }}/js/lunr.min.js"></script>
-<script src="{{ site.github.url }}/js/search.js"></script>
+<script src="{{ base }}/js/lunr.min.js"></script>
+<script src="{{ base }}/js/search.js"></script>

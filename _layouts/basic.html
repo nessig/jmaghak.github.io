@@ -5,37 +5,43 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+    {% if jekyll.environment == "development" %}
+    {% assign base = site.baseurl %}
+    {% else %}
+    {% assign base = site.github.url %}
+    {% endif %}
 
 <head>
     <title>{{page.title}}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--[if lte IE 8]><script src="{{ site.github.url }}/js/ie/html5shiv.js"></script><![endif]-->
-    <link href="{{ site.github.url }}/css/main.css" rel="stylesheet" />
-    <!--[if lte IE 9]><link rel="stylesheet" href="{{ site.github.url }}/css/ie9.css" /><![endif]-->
-    <!--[if lte IE 8]><link rel="stylesheet" href="{{ site.github.url }}/css/ie8.css" /><![endif]-->
+    <!--[if lte IE 8]><script src="{{ base }}/js/ie/html5shiv.js"></script><![endif]-->
+    <link href="{{ base }}/css/main.css" rel="stylesheet" />
+    <!--[if lte IE 9]><link rel="stylesheet" href="{{ base }}/css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="{{ base }}/css/ie8.css" /><![endif]-->
 </head>
 
 <body>
+    <h1>Base is: {{base}}, {{jekyll.environment}}</h1>
     <!-- Wrapper -->
     <div id="wrapper">
         <!-- Header -->
         <header id="header">
-            <h1><a href="{{ site.github.url }}">jmaghak</a></h1>
+            <h1><a href="{{ base }}/">jmaghak</a></h1>
             <nav class="links">
                 <ul>
-                    <li><a href="{{ site.github.url }}/about">About</a></li>
-                    <li><a href="{{ site.github.url }}/vitae">CV</a></li>
-                    <li><a href="{{ site.github.url }}/research">Research</a></li>
-                    <li><a href="{{ site.github.url }}/publications">Publications</a></li>
-                    <li><a href="{{ site.github.url }}/blog">Blog</a></li>
+                    <li><a href="{{ base }}/about">About</a></li>
+                    <li><a href="{{ base }}/vitae">CV</a></li>
+                    <li><a href="{{ base }}/research">Research</a></li>
+                    <li><a href="{{ base }}/publications">Publications</a></li>
+                    <li><a href="{{ base }}/blog">Blog</a></li>
                 </ul>
             </nav>
             <nav class="main">
                 <ul>
                     <li class="search">
                         <a class="fa-search" href="#search">Search</a>
-                        <form id="search" action="{{ site.github.url }}/search" method="get">
+                        <form id="search" action="{{ base }}/search" method="get">
                             <input type="text" name="query" placeholder="Search" autocomplete="off">
                         </form>
                     </li>
@@ -51,7 +57,7 @@
 
             <!-- Search -->
             <section>
-                <form class ="search" action="{{ site.github.url }}/search" method="get">
+                <form class ="search" action="{{ base }}/search" method="get">
                     <input type="text" name="query" placeholder="Search" autocomplete="off">
                 </form>
             </section>
@@ -59,11 +65,11 @@
             <!-- Links -->
             <section>
                 <ul class="links">
-                    <li><a href="{{ site.github.url }}/about"><h3>About</h3></a></li>
-                    <li><a href="{{ site.github.url }}/vitae"><h3>CV</h3></a></li>
-                    <li><a href="{{ site.github.url }}/research"><h3>Research</h3></a></li>
-                    <li><a href="{{ site.github.url }}/publications"><h3>Publications</h3></a></li>
-                    <li><a href="{{ site.github.url }}/blog"><h3>Blog</h3></a></li>
+                    <li><a href="{{ base }}/about"><h3>About</h3></a></li>
+                    <li><a href="{{ base }}/vitae"><h3>CV</h3></a></li>
+                    <li><a href="{{ base }}/research"><h3>Research</h3></a></li>
+                    <li><a href="{{ base }}/publications"><h3>Publications</h3></a></li>
+                    <li><a href="{{ base }}/blog"><h3>Blog</h3></a></li>
                 </ul>
             </section>
         </section>
@@ -88,11 +94,11 @@
 
     </div>
     <!-- Scripts -->
-    <script src="{{ site.github.url }}/js/jquery.min.js"></script>
-    <script src="{{ site.github.url }}/js/skel.min.js"></script>
-    <script src="{{ site.github.url }}/js/util.js"></script>
-    <!--[if lte IE 8]><script src="{{ site.github.url }}/js/ie/respond.min.js"></script><![endif]-->
-    <script src="{{ site.github.url }}/js/main.js"></script>
+    <script src="{{ base }}/js/jquery.min.js"></script>
+    <script src="{{ base }}/js/skel.min.js"></script>
+    <script src="{{ base }}/js/util.js"></script>
+    <!--[if lte IE 8]><script src="{{ base }}/js/ie/respond.min.js"></script><![endif]-->
+    <script src="{{ base }}/js/main.js"></script>
 </body>
 
 </html>
