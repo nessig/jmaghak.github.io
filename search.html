@@ -2,12 +2,19 @@
 layout: basic
 title: "Search"
 ---
+
 {% if jekyll.environment == "development" %}
 {% assign base = site.baseurl %}
 {% else %}
 {% assign base = site.github.url %}
 {% endif %}
+
 <div id="main">
+    <!-- {% for post in site.posts %}
+         {{post.url | prepend: base}}
+         {% endfor %}
+       -->
+
 <form action="{{ base }}/search" method="get">
   <label for="search-box">Search</label>
   <input type="text" id="search-box" name="query">
@@ -24,7 +31,7 @@ title: "Search"
         "title": "{{ post.title | xml_escape }}",
         "author": "{{ post.author | xml_escape }}",
         "content": {{ post.content | strip_html | strip_newlines | jsonify }},
-          "url": "{{ post.url | xml_escape }}",
+          "url": "{{ post.url | prepend:base | xml_escape }}",
           "categories": {{post.categories | jsonify }}
       },
       {% endfor %}
